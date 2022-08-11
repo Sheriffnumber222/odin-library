@@ -1,4 +1,4 @@
-let myLibrary = [];
+let myLibrary = [new Book("The Hobbit", "J.R.R. Tolkien", 295, false), new Book("The Way of Kings", "Brandon Sanderson", 1001, true), new Book("Bretts Big Book", "Brett Sheriff", 3, false)];
 
 function Book(title, author, pages, read) {
     this.title = title
@@ -26,7 +26,13 @@ function addBookToLibrary() {
     myLibrary.push(new Book(newBookTitle, newBookAuthor, newBookPages, newBookRead));
 }
 
-const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 295, false);
-const theWayOfKings = new Book("The Way of Kings", "Brandon Sanderson", 1001, true);
-addBookToLibrary();
+// const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 295, false);
+// const theWayOfKings = new Book("The Way of Kings", "Brandon Sanderson", 1001, true);
 
+function displayBooks() {
+    let g = 0;
+    for(i = myLibrary.length; i > 0; i--) {
+        g++;
+        console.log(g);
+    }
+}
