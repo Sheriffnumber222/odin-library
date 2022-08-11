@@ -14,7 +14,7 @@ Book.prototype.info = function() {
     } else {
         readStatus = "not read"
     };
-    console.log(this.title + " by " + this.author + ", " + this.pages + " pages, " + readStatus);
+    return this.title + " by " + this.author + ", " + this.pages + " pages, " + readStatus;
 }
 
 //Add a new book to my Library based off user inputs
@@ -26,13 +26,13 @@ function addBookToLibrary() {
     myLibrary.push(new Book(newBookTitle, newBookAuthor, newBookPages, newBookRead));
 }
 
-// const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 295, false);
-// const theWayOfKings = new Book("The Way of Kings", "Brandon Sanderson", 1001, true);
-
+//Cycles through myLibrary array and displays each book on webpage
 function displayBooks() {
-    let g = 0;
+    const container = document.querySelector(`#container`);
     for(i = myLibrary.length; i > 0; i--) {
-        g++;
-        console.log(g);
+        let div = document.createElement("div");
+        div.textContent = `${myLibrary[i-1].info()}`;
+        container.appendChild(div);
     }
 }
+displayBooks();
