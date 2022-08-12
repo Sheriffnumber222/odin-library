@@ -35,4 +35,3 @@ function displayBooks() {
         container.appendChild(div);
     }
 }
-displayBooks();
